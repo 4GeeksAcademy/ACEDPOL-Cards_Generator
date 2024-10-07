@@ -10,7 +10,25 @@
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/072e5df971.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
-  <body></body>
+  <body>
+    <div class="d-flex justify-content-center my-3">
+      <poker-card class="d-flex flex-column p-3">
+        <div class="mb-2">
+          <card-suit class="text-dark" id="first">♠</card-suit>
+        </div>
+        <container class="d-flex justify-content-center mb-4">
+          <card-number class="text-dark">A</card-number>
+        </container>
+        <div class="mb-2">
+          <card-suit class="text-dark float-end" id="second">♠</card-suit>
+        </div>
+      </poker-card>
+    </div>
+  </body>
 </html>

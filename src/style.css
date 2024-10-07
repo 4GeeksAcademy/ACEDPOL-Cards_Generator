@@ -1,1 +1,23 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: green;
+}
+
+poker-card {
+  border-radius: 0.85rem !important;
+  background-color: white;
+  width: 18rem;
+  /* height: 25rem; */
+  box-shadow: 0.25rem 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+}
+
+card-suit {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+card-number {
+  font-size: 10rem;
+  line-height: 1;
+}
