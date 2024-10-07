@@ -7,5 +7,5 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  console.log("This is the Cards Generator app!");
 };
