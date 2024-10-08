@@ -5,18 +5,48 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-var iconsArray, number;
+var iconsArray,
+  number,
+  pokerCard,
+  widthRange,
+  heightRange,
+  initialWidth,
+  initialHeight;
 
 window.onload = function() {
   //write your code here
   console.log("This is the Cards Generator app!");
-  // recoge las variables
+
+  // Variables de componentes de la carta
   var icons = document.getElementsByTagName("card-suit");
   iconsArray = Array.prototype.slice.call(icons);
   number = document.getElementsByTagName("card-number")[0];
 
+  // Variables para hacer la carta interactiva
+  pokerCard = document.getElementsByTagName("poker-card")[0];
+  pokerCard.addEventListener("click", () => generateCard());
   generateCard(); // generates a new card
+
+  // Variables para modificar el tamaño de la carta
+  var vrem = parseFloat(window.getComputedStyle(document.body).fontSize);
+  widthRange = document.getElementById("widthRange");
+  initialWidth = pokerCard.clientWidth / vrem;
+  widthRange.value = initialWidth;
+  heightRange = document.getElementById("heightRange");
+  initialHeight = pokerCard.clientHeight / vrem;
+  heightRange.value = initialHeight;
+
+  widthRange.addEventListener("input", () => resize());
+  heightRange.addEventListener("input", () => resize());
+
+  // Método para generar el temporizador
+  createInterval();
 };
+
+function createInterval() {
+  setTimeout(generateCard, 3000);
+  setTimeout(createInterval, 3000);
+}
 
 function generateCard() {
   // suit => { ♦ ♥ ♠ ♣ }
@@ -86,4 +116,9 @@ function setNumber(num) {
   } else if (num === 13) {
     number.innerHTML = "K";
   }
+}
+
+function resize() {
+  pokerCard.style.width = widthRange.value + "rem";
+  pokerCard.style.height = heightRange.value + "rem";
 }

@@ -12,6 +12,10 @@ poker-card {
   box-shadow: 0.25rem 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 
+poker-card:hover {
+  cursor: pointer;
+}
+
 card-suit {
   font-size: 5rem;
   line-height: 1;
