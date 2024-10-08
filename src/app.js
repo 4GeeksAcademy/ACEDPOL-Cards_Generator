@@ -11,7 +11,9 @@ var iconsArray,
   widthRange,
   heightRange,
   initialWidth,
-  initialHeight;
+  initialHeight,
+  resetButton,
+  createButton;
 
 window.onload = function() {
   //write your code here
@@ -39,13 +41,19 @@ window.onload = function() {
   widthRange.addEventListener("input", () => resize());
   heightRange.addEventListener("input", () => resize());
 
-  // Método para generar el temporizador
+  // Método para generar el temporizador: 10000ms = 10seg
   createInterval();
+
+  // Variables para los botones extra: resetSize
+  resetButton = document.getElementById("resetSizeBtn");
+  resetButton.addEventListener("click", () => resetSize());
+  createButton = document.getElementById("createCardBtn");
+  createButton.addEventListener("click", () => generateCard());
 };
 
 function createInterval() {
-  setTimeout(generateCard, 3000);
-  setTimeout(createInterval, 3000);
+  setTimeout(generateCard, 10000);
+  setTimeout(createInterval, 10000);
 }
 
 function generateCard() {
@@ -121,4 +129,11 @@ function setNumber(num) {
 function resize() {
   pokerCard.style.width = widthRange.value + "rem";
   pokerCard.style.height = heightRange.value + "rem";
+}
+
+function resetSize() {
+  pokerCard.style.width = initialWidth + "rem";
+  pokerCard.style.height = initialHeight + "rem";
+  widthRange.value = initialWidth;
+  heightRange.value = initialHeight;
 }

@@ -17,6 +17,44 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
+    <!-- Range selectors -->
+    <div class="d-flex flex-column align-items-center my-3">
+      <h6>(Click en la carta para generar una nueva)</h6>
+      <div class="w-50">
+        <label for="widthRange" class="text-light fs-4 fw-bold"
+          >width range</label
+        >
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="100"
+          id="widthRange"
+          value="18"
+        />
+      </div>
+      <div class="w-50">
+        <label for="heightRange" class="text-light fs-4 fw-bold"
+          >height range</label
+        >
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="100"
+          id="heightRange"
+          value="24.5"
+        />
+      </div>
+      <div class="w-50 d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary mx-2" id="resetSizeBtn">
+          Reset Size
+        </button>
+        <button type="button" class="btn btn-success mx-2" id="createCardBtn">
+          New Card
+        </button>
+      </div>
+    </div>
     <!-- Poker Card -->
     <div class="d-flex justify-content-center my-3">
       <poker-card class="d-flex flex-column justify-content-between p-3">
@@ -31,38 +69,6 @@
           <card-suit class="text-dark float-end" id="second">♠</card-suit>
         </div>
       </poker-card>
-    </div>
-    <!-- Range selectors -->
-    <div class="d-flex flex-column align-items-center my-3">
-      <div class="w-50">
-        <label for="widthRange" class="text-light fs-4 fw-bold"
-          >width range</label
-        >
-        <input
-          type="range"
-          class="form-range"
-          min="0"
-          max="100"
-          id="widthRange"
-          onchange="resize()"
-          value="18"
-        />
-      </div>
-      <div class="w-50">
-        <label for="heightRange" class="text-light fs-4 fw-bold"
-          >height range</label
-        >
-        <input
-          type="range"
-          class="form-range"
-          min="0"
-          max="100"
-          id="heightRange"
-          onchange="resize()"
-          value="24.5"
-        />
-      </div>
-      <h6>(Click en la carta para generar una nueva)</h6>
     </div>
   </body>
 </html>
